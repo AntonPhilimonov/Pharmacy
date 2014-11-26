@@ -1,46 +1,67 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html ng-app="app">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="Components/bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <link href="Components/bootstrap/them/bootstrap_cosmo.css" rel="stylesheet" />
+    <!--Application styles -->
+
     <link href="Style/main.css" rel="stylesheet" />
 
-    <!--TODO Anton - should be taken from local.-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <link href="Components/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!--End of Application styles -->
 
-<!--    <script src="Components/angular/angular.js"></script>
-    <script src="Components/angular-bootstrap/ui-bootstrap.js"></script>
-    <script src="Components/angular-bootstrap/ui-bootstrap-tpls.js"></script>-->
-    <script type="text/javascript" src="Components/bootstrap/js/bootstrap.js"></script>
-    <script src="Components/bootstrap/js/bootswatch.js"></script>
-    <title></title>
+    <!--3rd parties JS components-->
+
+    <script src="Components/bower_components/angular/angular.js"></script>
+    <script src="Components/bower_components/angular-route/angular-route.js"></script>
+
+    <script src="Components/bower_components/jquery/dist/jquery.js"></script>
+
+    <script src="Components/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <link href="Components/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="Components/bower_components/bootstrap-theme-cosmo/cosmo.min.css" rel="stylesheet" />
+
+    <!--End of 3rd parties JS components-->
+
+    <!--Application business logick files-->
+
+    <script src="App/app.js"></script>
+    <script src="App/Views/DrugSearch/drugSearchController.js"></script>
+    <script src="App/Views/Map/mapController.js"></script>
+    <script src="App/Views/MedicineChest/medicineChestController.js"></script>
+    <script src="App/Views/Phrasebook/phrasebookController.js"></script>
+
+    <!--End of application business logick files-->
+
+    <title>MEDS</title>
 </head>
-    <body>
-        <div class="bs-component">
-        <div class="navbar navbar-inverse">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toogle="collapse" data-target=".navbar-inverse-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Название виджета</a>
-            </div>
-            <div class="navbar-collapse navbar-inverse-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active" href="#"><a>Active</a></li>
-                    
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a>Аптечка туриста</a></li>
-                </ul>
-            </div>
+<body>
+    <div class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target=".navbar-inverse-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand">Название виджета</span>
         </div>
-            </div>
-    </body>
+        <div class="navbar-collapse collapse navbar-inverse-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#/drugSearch">Поиск лекарств</a></li>
+                <li><a href="#/map">Ближайшее аптеки</a></li>
+                <li><a href="#/Phrasebook">Разговорник</a></li>
+                <li><a href="#/MedicineChest">Аптечка путешественника</a></li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <div ng-view>
+        </div>
+    </div>
+    <script>
+        angular.module('app');
+    </script>
+</body>
 </html>
