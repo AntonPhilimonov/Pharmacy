@@ -16,8 +16,12 @@ angular.module('app', [
                 })
                 .when('/map', {
                     templateUrl: 'App/Views/Map/mapView.html'
-                }).when('/MedicineChest', {
-                    templateUrl: 'App/Views/MedicineChest/medicineChestView.html'
+                }).when('/MedicineChestCategorySelect', {
+                    templateUrl: 'App/Views/MedicineChest/MedicineChestCategorySelectView.html'
+                }).when('/MedicineChestAdultChest', {
+                    templateUrl: 'App/Views/MedicineChest/MedicineChestAdultChestView.html'
+                }).when('/MedicineChestChildChest', {
+                    templateUrl: 'App/Views/MedicineChest/MedicineChestChildChestView.html'
                 }).when('/Phrasebook', {
                     templateUrl: 'App/Views/Phrasebook/PhrasebookView.html'
                 })
