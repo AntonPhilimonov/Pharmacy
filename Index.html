@@ -36,32 +36,32 @@
 
     <title>MEDS</title>
 </head>
-<body>
-    <div class="navbar navbar-inverse">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                data-target=".navbar-inverse-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <span class="navbar-brand">Название виджета</span>
+    <body>
+       <div class="navbar navbar-inverse"> <!--style="position: fixed; z-index: 10;"-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target=".navbar-inverse-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="navbar-brand">Название виджета - {{WidgetCaption}}</span>
+            </div>
+            <div class="navbar-collapse collapse navbar-inverse-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/drugSearch">Поиск лекарств</a></li>
+                    <li><a href="#/map">Ближайшее аптеки</a></li>
+                    <li><a href="#/Phrasebook">Разговорник</a></li>
+                    <li><a href="#/MedicineChestCategorySelect">Аптечка путешественника</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="navbar-collapse collapse navbar-inverse-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="#/drugSearch">Поиск лекарств</a></li>
-                <li><a href="#/map">Ближайшее аптеки</a></li>
-                <li><a href="#/Phrasebook">Разговорник</a></li>
-                <li><a href="#/MedicineChest">Аптечка путешественника</a></li>
-            </ul>
+        <div>
+            <div ng-view>
+            </div>
         </div>
-    </div>
-    <div>
-        <div ng-view>
-        </div>
-    </div>
-    <script>
-        angular.module('app');
-    </script>
-</body>
+        <script>
+            angular.module('app');
+        </script>
+    </body>
 </html>
